@@ -1,0 +1,13 @@
+<p>img-upload works!</p>
+
+<form [formGroup]="imguploadform">
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Default file input example</label>
+        <input class="form-control" type="file" id="formFile"  (change)="uploadfile($event)"  formControlName="file">
+
+        <img *ngIf="imagePreview" [src]="imagePreview" alt="Image Preview" class="preview-image">
+
+    </div>
+    <p>{{uploadMessage }} </p>
+    <button >Submit</button>
+</form>
