@@ -18,10 +18,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="emailId" class="form-label">Select Department</label>
-                       <select id="" class="w-100" formControlName="deptId">
-                        <option value="" selected>Select Department</option>
-                        <option value="" *ngFor="let dept of deptArray; let i=index" [value]="dept.departmentId">{{dept.departmentName}}</option>
-                       </select>
+                        <select id="" class="w-100" formControlName="deptId">
+                            <option value="" selected>Select Department</option>
+                            <option value="" *ngFor="let dept of deptArray; let i=index" [value]="dept.deptId">
+                                {{dept.deptName}}</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
@@ -41,8 +42,8 @@
                             <option value="">Select Role</option>
                             <option value="Admin">Admin</option>
                             <option value="User">User</option>
-                          </select>
-                          
+                        </select>
+
                     </div>
                     <div class="d-grid">
                         <button type="submit" class="btn btn-primary">Register</button>
@@ -53,7 +54,7 @@
                     <h2 class="text-center mb-4">Login</h2>
                     <div class="mb-3">
                         <label for="userName" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="userName"  formControlName="emailId">
+                        <input type="email" class="form-control" id="userName" formControlName="emailId">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>

@@ -14,9 +14,9 @@ export class LoginComponent {
 
   empregisterform: FormGroup | any;
   loginform: FormGroup | any;
-  deptArray: any[] =[];
+  deptArray: any[] = [];
 
-  constructor( private loginService: LoginService, private fb: FormBuilder, private authservice: AuthService, private router: Router) {
+  constructor(private loginService: LoginService, private fb: FormBuilder, private authservice: AuthService, private router: Router) {
 
   }
   ngOnInit() {
@@ -37,25 +37,25 @@ export class LoginComponent {
     })
   }
 
-  loginformfields(){
+  loginformfields() {
     this.loginform = this.fb.group({
       emailId: new FormControl(''),
       password: new FormControl(''),
     })
   }
 
-  getdept(){
+  getdept() {
     this.loginService.getdepartment().subscribe({
-      next: (res: any) =>{
+      next: (res: any) => {
         console.log(res.data);
         this.deptArray = res.data;
       },
-      error: (res: any) =>{
+      error: (res: any) => {
         console.log(res.error);
       }
     })
   }
-  empregister(){
+  empregister() {
     console.log(this.empregisterform.value);
     let obj = this.empregisterform.value;
 
@@ -72,17 +72,17 @@ export class LoginComponent {
 
 
     this.loginService.register(params).subscribe({
-      next: (res: any) =>{
+      next: (res: any) => {
         console.log(res);
       },
-      error: (error: any) =>{
+      error: (error: any) => {
         console.log(error);
       }
     })
   }
 
 
-  login(){
+  login() {
     console.log(this.loginform.value);
 
     let obj = this.loginform.value;
@@ -93,12 +93,17 @@ export class LoginComponent {
     }
 
     this.loginService.getlogin(params).subscribe({
-      next: (res: any) =>{
-        console.log(res.data);
-        localStorage.setItem('token', res.data);
+      next: (res: any) => {
+        if (res.result) {
+          console.log(res.data);
+          localStorage.setItem('currentuser', JSON.stringify(res.data));
+          this.router.navigateByUrl('/dashboard');
+        }
       },
-      error: (error: any) =>{
+      error: (error: any) => {
         console.log(error);
+        this.router.navigateByUrl('/login');
+
       }
     })
   }

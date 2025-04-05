@@ -1,0 +1,46 @@
+/* Navbar background */
+.navbar {
+    background-color: #004080 !important; /* Dark professional blue */
+    padding: 0.8rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Navbar brand */
+  .navbar-brand {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .navbar-brand:hover {
+    color: #d4e3ff;
+  }
+  
+  /* Navbar links */
+  .navbar-nav .nav-link {
+    color: #fff;
+    font-weight: 500;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #a8c8ff;
+  }
+  
+  /* Active nav item */
+  .navbar-nav .nav-link.active {
+    border-bottom: 2px solid #fff;
+    color: #d4e3ff;
+  }
+  
+  /* Responsive toggle button */
+  .navbar-toggler {
+    border: none;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+  

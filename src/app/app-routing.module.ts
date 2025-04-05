@@ -4,12 +4,13 @@ import { PublicComponent } from './layouts/public/public.component';
 import { SecureComponent } from './layouts/secure/secure.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'home', pathMatch:'full' },
-  { path: '',component: PublicComponent,  loadChildren: () => import('./layouts/public/public.module').then(m => m.PublicModule) },
-  { path: '',component: SecureComponent, loadChildren: () => import('./layouts/secure/secure.module').then(m => m.SecureModule) },
- 
-  
-  
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', component: PublicComponent, loadChildren: () => import('./layouts/public/public.module').then(m => m.PublicModule) },
+  { path: '', component: SecureComponent, loadChildren: () => import('./layouts/secure/secure.module').then(m => m.SecureModule) },
+
+
+
+
 ];
 
 @NgModule({

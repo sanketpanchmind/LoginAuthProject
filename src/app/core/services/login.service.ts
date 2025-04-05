@@ -9,18 +9,22 @@ export class LoginService {
 
   constructor(private http: HttpClient) {
 
-   }
+  }
 
-   register(obj: any):Observable<any>{
+  register(obj: any): Observable<any> {
     return this.http.post('https://projectapi.gerasim.in/api/EmployeeManagement/CreateEmployee', obj);
-   }
+  }
 
-   getdepartment(): Observable<any>{
-    return this.http.get('https://projectapi.gerasim.in/api/EmployeeManagement/GetParentDepartment');
-   }
+  getdepartment(): Observable<any> {
+    return this.http.get('https://freeapi.miniprojectideas.com/api/EmployeeLeave/GetDepartments');
+  }
 
 
-   getlogin(obj: any): Observable<any>{
-    return this.http.post('https://projectapi.gerasim.in/api/EmployeeManagement/login', obj);
-   }
+  getlogin(obj: any): Observable<any> {
+    return this.http.post('https://freeapi.miniprojectideas.com/api/EmployeeLeave/Login', obj);
+  }
+
+  getAllRoles(): Observable<any> {
+    return this.http.get('https://freeapi.miniprojectideas.com/api/EmployeeLeave/GetAllRoles');
+  }
 }

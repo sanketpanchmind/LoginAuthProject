@@ -7,25 +7,35 @@ import { Router } from '@angular/router';
 
 export class AuthService {
 
-  private token = 'logintoken';
+  private token = 'currentuser';
   private refreshtoken = 'refreshtoken';
 
-  constructor(private router: Router) { 
+  private user = {
+    role: 'admin'
+  }
+
+  constructor(private router: Router) {
 
   }
 
-  
-  gettoken(){
-    return localStorage.getItem('logintoken');
+
+  gettoken() {
+    return localStorage.getItem('currentuser');
+  }
+  getUserrole() {
+    return this.user.role;
+  }
+  isloggedIn() {
+    return !this.user;
   }
 
-  settoken(token: string, refreshtoken: string){
+  settoken(token: string) {
     localStorage.setItem(this.token, token);
-    localStorage.setItem(this.refreshtoken, refreshtoken);
+    // localStorage.setItem(this.refreshtoken, refreshtoken);
   }
 
-  logout(){
-    localStorage.removeItem('logintoken');
+  logout() {
+    localStorage.removeItem('currentuser');
     this.router.navigateByUrl('/login');
   }
 
